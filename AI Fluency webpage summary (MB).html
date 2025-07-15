@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fluency Framework</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .main-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .content-area {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .interaction-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .mode-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        
+        .mode-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .mode-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .mode-description {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .framework-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .competency-card {
+            background: #15799c;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .competency-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .competency-card.expanded {
+            background: #15799c;
+            transform: scale(1.02);
+        }
+        
+        .competency-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .competency-tagline {
+            font-size: 0.95em;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .competency-details {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .competency-card.expanded .competency-details {
+            opacity: 1;
+            max-height: 210px;
+        }
+        
+        .detail-item {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .expand-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        
+        .competency-card.expanded .expand-indicator {
+            transform: rotate(180deg);
+        }
+        
+        @media (max-width: 768px) {
+            .framework-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="main-title">The AI Fluency Framework</h1>
+        <p class="subtitle">Four interconnected competencies necessary to ensure our interactions with AI are effective, efficient, ethical, and safe.</p>
+    </div>
+
+    <div class="framework-container">
+        <h2 class="framework-title">The 4D Framework</h2>
+
+        <div class="framework-grid">
+            <div class="competency-card" data-competency="delegation">
+                <h3 class="competency-title">Delegation</h3>
+                <p class="competency-tagline">Using your expertise and judgement to decide whether, when, and how to engage with AI. The goal isn't to automate everything, but to enable an effective partnership that leverages the unique strengths of you and the AI.</p>
+                <div class="competency-details">
+                    <div class="detail-item">• Your ability to define your own goals and understand what work is needed before involving AI tools.</div>
+                    <div class="detail-item">• A working knowledge of AI systems and their capabilities and limitations.</div>
+                    <div class="detail-item">• The strategic process of breaking down complex tasks and dividing work between humans and AI.</div>
+                </div>
+                <div class="expand-indicator">▼</div>
+            </div>
+            
+            <div class="competency-card" data-competency="description">
+                <h3 class="competency-title">Description</h3>
+                <p class="competency-tagline">Communicating with AI in ways that create a productive and collaborative environment. Clear communication upfront saves time and leads to better results.</p>
+                <div class="competency-details">
+                    <div class="detail-item">• The ability to craft clear, specific, prompts, and instructions to define your desired output.</div>
+                    <div class="detail-item">• Providing appropriate guidance, context, and constraints.</div>
+                    <div class="detail-item">• Iterating on prompts to improve results.</div>
+                    <div class="detail-item">• Understanding how different AI systems respond to various input styles.</div>
+                </div>
+                <div class="expand-indicator">▼</div>
+            </div>
+            
+            <div class="competency-card" data-competency="discernment">
+                <h3 class="competency-title">Discernment</h3>
+                <p class="competency-tagline">Your ability to thoughtfully and critically evaluate what AI produces, how it produces it, and how it behaves. This requires your expertise and an understanding of AI systems and their typical limitations.</p>
+                <div class="competency-details">
+                    <div class="detail-item">• Evaluating AI output accuracy, quality, and relevance.</div>
+                    <div class="detail-item">• Identifying potential biases or limitations.</div>
+                    <div class="detail-item">• Recognizing when AI responses may be incomplete or incorrect.</div>
+                    <div class="detail-item">• Validating AI-generated content against reliable sources.</div>
+                </div>
+                <div class="expand-indicator">▼</div>
+            </div>
+            
+            <div class="competency-card" data-competency="diligence">
+                <h3 class="competency-title">Diligence</h3>
+                <p class="competency-tagline">Taking responsibility for what we do and create with AI, and how we do it. AI systems and our interactions with them exist in context of many other obligations, systems, and people.</p>
+                <div class="competency-details">
+                    <div class="detail-item">• Ensuring ethical use of AI tools and outputs.</div>
+                    <div class="detail-item">• Understanding privacy and security implications.</div>
+                    <div class="detail-item">• Maintaining trust by taking responsibility and being transparent about AI-assisted or generated outputs you share with others.</div>
+                    <div class="detail-item">• Continuously learning about AI capabilities and limitations.</div>
+                </div>
+                <div class="expand-indicator">▼</div>
+            </div>
+        </div>
+    </div>    
+
+    <div class="content-area">
+        <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1.2em; color: #333;">The '4D' competencies apply across all our interactions with AI systems</h3>
+        <p style="margin-bottom: 20px; color: #555;">There are three main ways we interact with AI systems.</p>
+        
+        <div class="interaction-modes">
+            <div class="mode-card">
+                <h4 class="mode-title">Automation</h4>
+                <p class="mode-description">AI executes specific tasks based on pre-defined instructions</p>
+            </div>
+            
+            <div class="mode-card">
+                <h4 class="mode-title">Augmentation</h4>
+                <p class="mode-description">Humans and AI collaborate as thinking partners to tackle a project, problem, or goal</p>
+            </div>
+            
+            <div class="mode-card">
+                <h4 class="mode-title">Agency</h4>
+                <p class="mode-description">Humans configure AI to independently perform future tasks on their behalf</p>
+            </div>
+        </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.competency-card');
+            
+            cards.forEach(card => {
+            card.addEventListener('click', function() {
+                // Simply toggle the expanded state of the clicked card
+                this.classList.toggle('expanded');
+            });
+        });
+        });
+    </script>
+</body>
+</html>
